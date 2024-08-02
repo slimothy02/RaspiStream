@@ -1,0 +1,1 @@
+This is text inside of this announcement box. Put whatever you want here and it will save across refreshed as long as you hit the "Set announcement" button.
