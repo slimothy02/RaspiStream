@@ -1,0 +1,50 @@
+<head>
+<title>UII Metrology Info Board</title>
+<style>
+textarea {
+	resize: none;
+}
+.inline {
+	display: inline-flex;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+	<div class="row">
+		<div class="col-lg8 offset-lg-2">
+			<h3 class="mt-5" style="inline-flex;font-size: xx-large;margin: 5;">UII Metrology Info Board</h3>
+			<img src="{{url_for("static",filename="UIIlogo.png")}}" class="inline" style="
+													position: fixed;
+													top: 10px;
+													right:10px;
+													">
+			<img src="{{url_for('video_feed')}}" width="45%" style="display:block; margin-right:auto; margin-left:auto;"alt="This is where the video stream is supposed to be. There was likely an error with the camera's connection to the Raspberry Pi.">
+			<button type="submit" onclick="window.open('https://app.zoom.us/wc/home')" target="_blank" style="
+                        													position: fixed;
+                        													top:130px;
+                        													right:10px;
+                        													">Join/Host Zoom Meeting</button>
+			<form action="" method="POST">
+				<table style="margin-left:auto;  margin-right:auto;">
+				<tr>
+					<td>
+						<textarea id="box_1" name="box_1" cols="50" rows="10">{{input_1}}</textarea>
+					</td>
+					<td>
+						<textarea id="box_2" name="box_2" cols="50" rows="10">{{input_2}}</textarea>
+					</td>
+					<td>
+						<textarea id="box_3" name="box_3" cols="50" rows="10">{{input_3}}</textarea>
+					</td>
+				</tr>
+				</table>
+				<div class="button">
+					<button type="submit" onClick="window.location.href=window.location.href" style="position:absolute; right:80%;">Set announcement</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+</body>
