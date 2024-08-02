@@ -20,11 +20,7 @@ def gen_frames():
         while True:
                 try:
                         frame = vid.capture_array()
-                        h,w = frame.shape[:2]
-                        b,g = cv2.split(frame)
-                        black = np.zeros((h,w), dtype=np.uint8)
-                        result = cv2.merge([b,g,black])
-                        frame = cv2.cvtColor(result, cv2.COLOR_BGR2RGB)    # fixes the red & blue color switch
+                        #frame = cv2.cvtColor(result, cv2.COLOR_BGR2RGB)    # fixes the red & blue color switch
                         ret, buffer = cv2.imencode('.jpg', frame)
                         frame = buffer.tobytes()
                         yield (b'--frame\r\n'b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
